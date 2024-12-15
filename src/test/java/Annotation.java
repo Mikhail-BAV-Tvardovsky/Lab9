@@ -21,12 +21,9 @@ public class Annotation {
                 sql.append(field.getName()).append(" ");
                 if (field.getType() == int.class) {
                     sql.append("INT");
-                } else if (field.getType() == String.class || field.getType().isEnum()) {
+                }
+                else if (field.getType() == String.class || field.getType().isEnum()) {
                     sql.append("TEXT");
-                } else if (field.getType() == float.class) {
-                    sql.append("FLOAT");
-                } else if (field.getType() == double.class) {
-                    sql.append("DOUBLE");
                 }
                 sql.append(",");
             }
@@ -35,7 +32,7 @@ public class Annotation {
         sql.append(");");
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:test99.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:test.db");
             Statement statement = connection.createStatement();
             statement.execute(sqlDEL.toString());
             statement.execute(sql.toString());
@@ -79,7 +76,7 @@ public class Annotation {
         query.deleteCharAt(query.length() - 1).append(")");
         Connection connection = null;
         try{
-            connection = DriverManager.getConnection("jdbc:sqlite:test99.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:test.db");
             Statement statement = connection.createStatement();
             statement.execute(query.toString());
         }

@@ -2,18 +2,22 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Eagle eagle =
-        new Eagle("Орел1", 2.54F, Eagle.Types.КРАСИВЫЙ, 17);
-        new Eagle("Орел2", 2.23F, Eagle.Types.БОЛЬШОЙ, 16);
-        new Eagle("Орел3", 3.75F, Eagle.Types.КРУТОЙ, 15);
-        new Eagle("Орел4", 3.75F, Eagle.Types.КРУТОЙ, 15);
-        new Eagle("Орел5", 3.75F, Eagle.Types.КРУТОЙ, 15);
+        Ant ant =
+        new Ant("Муравей Силач", 12, Ant.InsectColor.ЧЕРНЫЙ);
+        new Ant("Муравей Глупыш", 29, Ant.InsectColor.БЕЛЫЙ);
+        new Ant("Муравей Красавчик", 10, Ant.InsectColor.ЖЕЛТЫЙ);
+        new Ant("Муравей Гонщик", 4, Ant.InsectColor.ЧЕРНЫЙ);
+        new Ant("Муравей Мудрец", 99, Ant.InsectColor.БЕЛЫЙ);
+        new Ant("Муравей Зачинщик", 78, Ant.InsectColor.ЖЕЛТЫЙ);
+        new Ant("Муравей Воин", 52, Ant.InsectColor.ЧЕРНЫЙ);
+        new Ant("Муравей Главарь", 35, Ant.InsectColor.БЕЛЫЙ);
+        new Ant("Муравей Задира", 17, Ant.InsectColor.ЖЕЛТЫЙ);
         // Создаем таблицу один раз
-        Annotation.createTable(eagle);
+        Annotation.createTable(ant);
 
         // Получаем все экземпляры Eagle и вставляем их в таблицу
-        List<Eagle> eagles = Eagle.getAllInstances();
-        for (Eagle e : eagles) {
+        List<Ant> ants = Ant.getAllInstances();
+        for (Ant e : ants) {
             Annotation.insertIntoTable(e);
         }
     }
